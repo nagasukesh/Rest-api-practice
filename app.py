@@ -13,7 +13,6 @@ def display() :
 @api.route('/api/results',methods=['POST'])
 def results() :
     result = [res for res in data if res['sentimentValue']> 0.6 and res["Colour"]=="SpaceGrey" and res['size']  == '256GB' and res['Verification'] == 'False' and res['sentimentValue'] > 0.6 and (res['Date'] >='3 March 2018, .' or res['Date'] <= '3 March 2019, .' )]
-    #result= [res for res in data]#data[0]
     return jsonify(result)
 
 
